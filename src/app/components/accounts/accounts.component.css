@@ -1,0 +1,41 @@
+.container{
+  padding:15px 20px 15px 20px;
+}
+
+.info{
+  background-color:rgb(224, 221, 209);
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; 
+  margin-bottom: 2%;
+}
+.balance{
+  color: #36d64b;
+}
+p{
+  margin: 1.5%;
+  font-size: 12pt;
+  
+}
+
+
+
+.row{
+    margin : 2%;
+}
+
+
+.carte{
+  width:28vw;
+  padding-bottom: 10px;
+
+}
+@media (max-width: 783px) {
+    .container{
+        padding: 0;
+        overflow: hidden;
+    }
+  }
+
+  

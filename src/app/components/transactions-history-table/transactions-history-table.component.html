@@ -1,0 +1,19 @@
+
+<table *ngIf="transaction$ " class="table table-hover">
+    <tbody>
+        <tr *ngFor="let c of transaction$ |sortBy:'desc':'date' " >
+            <td class="mt-0 mb-1" > 
+                <p style="margin:0; color: #6A6A6A; font-size: 10pt;">{{c.date | date:'MMM'}} </p>
+                <p style="font-size: 20px;color: #6A6A6A !important;font-weight: bold;">{{c.date | date:'dd'}}</p>                        
+            </td>   
+            <td > 
+                <span *ngIf="c.is_sender==true"  style="font-size:20px;color: #6A6A6A !important; font-weight: lighter;" >{{c.sender.client.firstName}}{{c.sender.client.lastName}}</span>
+                 <span *ngIf="c.is_sender==false"  style="font-size:20px;color: #6A6A6A !important; font-weight: lighter;"  > {{c.receiver.client.firstName}}{{c.receiver.client.lastName}}</span>
+            </td> 
+            <td > 
+                <span *ngIf="c.is_sender==true" class="badge Good" style="font-size:20px;color: #6A6A6A !important; font-weight: bold;" >+{{c.somme}}<span style="font-size:small ;">MAD</span> </span>
+                <span *ngIf="c.is_sender==false" class="badge Ndanger" style="font-size:20px;color: #6A6A6A !important; font-weight: bold;"  >  -{{c.somme}} <span style="font-size:small ;">MAD</span></span>    
+            </td> 
+        </tr>
+    </tbody>
+</table>

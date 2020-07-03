@@ -1,0 +1,12 @@
+
+  <br>
+  <app-tab-credit [credits]="credits" (credit)="oncompte($event)"></app-tab-credit>
+  <br>
+
+<div class="container" *ngIf="selected">
+    <div  class="info">
+        <p >Id Crédit : {{currentCredit.id}}</p>
+       <p class="Montant ">Montant restant:  {{(currentCredit.mensualite*currentCredit.moisrest).toFixed(2)}}  MAD</p>
+    </div>
+  
+</div>

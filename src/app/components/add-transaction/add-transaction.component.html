@@ -1,0 +1,45 @@
+<div class="container">
+    <app-dashboard-account-table [accounts]="accounts" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+    
+
+    <div  class="info">
+      <p *ngIf="selected" >Numéro de compte : {{currentAccount.numcompte}}</p>
+      <p  *ngIf="selected"class="balance">${{currentAccount.balance}}</p>
+      <p *ngIf="!selected">Veuillez selectionner un compte du tableau : </p>
+    </div>
+    
+
+
+    <a class="dropdown-item" *ngIf="Success">Transaction efféctuée avec success 
+    </a>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-8 col-lg-8">
+    
+      <form [formGroup]="form" #f="ngForm"  >
+        <div class="form-group">
+          <label for="exampleDropdownFormNum1">Numéro international :<abbr style="color: red;" title="saisie le num du compte destinataire">*</abbr></label>
+  
+          <input (change)="Accountchange()" type="text" class="form-control mb-2" [class.is-invalid]="form.get('num').invalid"  formControlName="num" class="form-control" id="exampleDropdownFormNum1"  required>
+          <div style="color:red" *ngIf="accountnotfound">*Compte untrouvable</div>
+
+        </div>
+        <div style="color:red" *ngIf="getnum.errors?.pattern">*un numero valide </div>
+  
+  
+        <div class="form-group">
+          <label for="exampleDropdownFormPassword1">Somme:<abbr style="color: red;" title="saisie la somme a envoyee entre 16 a 24 nombre">*</abbr></label>
+  
+          <input (change)="insuffisantChange()"   type="text" class="form-control"  id="exampleDropdownFormPassword1"  [class.is-invalid]="form.get('somme').invalid" formControlName="somme"   required>
+          
+        </div>
+        <div style="color:red" *ngIf="getsom.errors?.pattern">*un numero valide</div>
+       
+  
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid || !selected "   (click)="AddTrans(f.value)" style="background-color: #337ab7">valider</button>
+        <div style="color:red" *ngIf="!suffisant">*solde insuffisant</div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>

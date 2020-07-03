@@ -1,0 +1,31 @@
+<div class="  d-flex flex-column align-items-center">
+  <div class="card_image">
+      <img class="img-responsive carte" src="../../../assets/img/Card Style.png">
+
+      <div class="numero">
+  <div class="top-left">{{this.owner.firstName}}  {{this.owner.lastName}}</div>
+  <br>
+  <div class="top-left1">
+      <span>{{n1}}</span>
+      <span>{{n2}}</span>
+      <span>{{n3}}</span>
+      <span>{{n4}}</span>
+  </div>
+</div>
+<div class="d-flex flex-column bottom-right">
+  <div >Expiration</div>
+  <div > {{this.carte.expiration |  date:'shortDate' }}</div>
+</div>
+
+<div class="d-flex flex-column right">
+  <div>cvv</div>
+  <div>{{carte.cvv}}</div>
+</div>
+
+  
+  </div>
+
+    <button *ngIf="active" (click)="desactiverCarte()" class="btn btn-danger">désactiver Carte</button>
+    <button *ngIf="!active" (click)="activerCarte()" class="btn btn-danger" style="background-color: forestgreen;">Activer Carte</button>
+
+  </div>

@@ -1,0 +1,180 @@
+.CBComponent{
+  padding:10px 20px 0 10px;
+  text-align: center;
+
+}
+.alert{
+  width:50%;
+  text-align: center;
+  margin: auto;
+}
+
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.cartes{
+
+  margin-top:60px;
+
+}
+
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  border: 1px solid white;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+
+  text-align: center;
+
+
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  /*border: 1px solid grey;*/
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+
+  height: 245px;
+  /*
+  width: 372px;
+  */
+  /*height: auto;*/
+  max-width:100%;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+/*
+:checked + label {
+  border-color: #ddd;
+}
+*/
+:checked + label:before {
+  content: "✓";
+  background-color: #2b5876;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+
+.mat-button-toggle-group{
+  font-size: 20px;
+  border:none;
+  border-radius: 0;
+}
+.mat-button-toggle{
+  background: #00B4DB;
+  color: white;
+  font-weight: 400;
+  margin:37px;
+  width:200px;
+
+}
+
+
+/*
+.CBComponent{
+  padding:10px 20px 0 10px;
+
+}
+.alert{
+  width:50%;
+  text-align: center;
+  margin: auto;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.cartes{
+
+  margin-top:60px;
+
+}
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  border: 1px solid white;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+
+
+  width: 90%;
+
+  text-align: center;
+
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: auto;
+  max-width:60%;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+:checked + label:before {
+  content: "✓";
+  background-color: #2b5876;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+
+
+*/

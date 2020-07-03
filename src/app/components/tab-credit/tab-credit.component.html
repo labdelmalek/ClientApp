@@ -1,0 +1,52 @@
+
+<div class="container account" >
+    <div class="row">
+            <div class="col" >
+                    <table class="table pb-4">
+                            <thead>
+                              <tr>
+                                <th scope="col" style="width:155px;">Tous Mes crédits </th>
+                        
+                              </tr>
+                            </thead>
+            
+   
+    
+    <tbody>
+
+            <tr class="first_tr">
+                    <th class="pos1" scope="col"></th>
+                    <th  class="pos1"scope="col">Nbre mois</th> 
+                    <th  class="pos1"scope="col">Taux</th>
+                    <th  class="pos1"scope="col">Mensualité</th>
+                    <th  class="pos1" scope="col">Mois restant</th>
+                    <th  class="pos1"scope="col" >Somme</th>
+                    <th  class="pos1"scope="col">Numero Int Compte</th></tr>
+                
+           
+            
+            <tr class="test" (click)="select(p)" *ngFor="let p of credits | paginate:{id : 'listing_pagination',
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: totalRecords}"
+            (click)="select(p)" 
+            [ngClass] = "{'highlight' : p.id == selectedName}"> 
+                <td  class="pos">    .........    </td>
+                <td class="pos">{{p.nbmois}}</td>
+                <td class="pos">{{p.taux}} %</td>
+                <td  class="pos">{{p.mensualite}}</td>
+                <td class="pos">{{p.moisrest}}</td>
+                <td class="pos">{{p.somme}}</td>
+                <td class="pos">{{p.credit.numinternational}}</td>
+                     </tr>
+                    </tbody>
+                    
+        </table>
+        <div>
+            <br>
+          <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+</div>
+

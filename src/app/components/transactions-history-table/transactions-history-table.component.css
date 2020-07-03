@@ -1,0 +1,17 @@
+.Danger{
+    background-color:red;
+}
+.Ndanger{
+    background-color: rgba(250, 188, 118, 0.863);
+}
+.Good{
+    background-color: rgba(135, 220, 135, 0.83);
+}
+table{
+    width:600px;
+    margin-left: 10px;
+}
+td:nth-child(0){
+    width: 50px;
+
+}

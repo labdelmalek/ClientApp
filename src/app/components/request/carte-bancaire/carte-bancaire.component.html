@@ -1,0 +1,50 @@
+<div class="CBComponent">
+
+<div class="alert alert-info" role="alert" *ngIf="!isCb">
+  <strong>Nos </strong><span>Cartes : Veuillez choisir ce qui vous plaît !</span>
+</div>
+
+<div class="alert alert-success" *ngIf="isCb" role="alert">
+  Demande envoyée
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="isCbFailed && !isCb">
+  {{errorMessage}}
+</div>
+
+<ul class="cartes container">
+  <div class="row">
+    <li class="col-sm-6"><input type="checkbox" id="cb1" [name]="name1" (change)="onChange($event);selectBadge($event, 'femme')" [disabled]="isChecked && (isCheckedName!=name1)"  />
+      <label  for="cb1"><img src="../../assets/img/femme.png" /></label>
+    </li>
+    <li class="col-sm-6" ><input type="checkbox" id="cb2" [name]="name2" (change)="onChange($event);selectBadge($event, 'jeune')" [disabled]="isChecked && (isCheckedName!=name2)"  />
+      <label  for="cb2"><img src="../../assets/img/jeune.png" /></label>
+    </li>
+  </div>
+  <div class="row">
+    <li class="col-sm-6"><input type="checkbox" id="cb3" [name]="name3" (change)="onChange($event);selectBadge($event, 'gold')" [disabled]="isChecked && (isCheckedName!=name3)"  />
+      <label for="cb3"><img src="../../assets/img/gold.png" /></label>
+    </li>
+    <li class="col-sm-6"><input type="checkbox" id="cb4" [name]="name4" (change)="onChange($event);selectBadge($event, 'employee')" [disabled]="isChecked && (isCheckedName!=name4)"  />
+      <label for="cb4"><img src="../../assets/img/employe.png" /></label>
+    </li>
+  </div>
+    </ul>
+
+    <mat-form-field>
+      <mat-label>saisir votre numéro de compte</mat-label>
+      <mat-select [(value)]="selected"  (selectionChange)="changeSelect()" >
+        <mat-option *ngFor="let compte of myChequeAccount" value="{{compte.numinternational}}">{{compte.numinternational}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <p>le compte saisi: {{selected}}</p>
+
+    <mat-button-toggle-group *ngIf="isSelected && isChecked" >
+      <mat-button-toggle *ngIf='!success' (click)="saveRequest()" >envoyer demande</mat-button-toggle>
+      <mat-button-toggle *ngIf='success'  style="background-color: forestgreen;"  >Demande enregistée</mat-button-toggle>
+        </mat-button-toggle-group>
+ 
+
+
+</div>

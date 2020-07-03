@@ -1,0 +1,113 @@
+<div class="container">
+   <div class="row">
+      <div class="col mr-2">
+        <div class="row1 ">
+
+      <h4>Bonjour, Vous pouvez visualiser vos demandes !</h4>
+  
+      <img src="../../assets/img/online.png">
+    </div>
+      </div>
+ 
+  
+    <div class="col mr-2">
+     
+        <table class="table">
+            <thead>
+              <tr>
+  
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Numero de compte</th>
+  
+              </tr>
+            </thead>
+            <tbody *ngFor="let c of Ccrequest">
+              <tr>
+  
+                <td>
+                    <div class="media">
+                        <img class="align-self-start mr-4" src="../../assets/img/cheque.png" alt="Generic image">
+                        <div class="media-body" >
+                          <h6 class="mt-0" >Carnet cc</h6>
+                          <span >Classique</span>
+                          
+                        </div>
+                      </div>
+                      <!--
+                <div class="firstRow">
+  
+                  <img src="../../assets/img/cheque.png">
+  
+                  <div style="display: block;line-height: 14px;">
+                  <span style="font-weight: 500; font-size: 16px;">Carnet cc </span>
+                  <span>Classique</span>
+                </div>
+  
+  
+                </div>
+                -->
+                </td>
+                <td>
+                  <div style="display: flex;
+                  /* width: 140px; */
+                  flex-flow: column;
+                  font-size: 14px;">
+                  <span>{{c.dateRequest |date}}</span>
+                  </div>
+  
+  
+  
+                </td>
+                <td>{{c.cheque.numcompte}}</td>
+  
+              </tr>
+  
+            </tbody>
+          </table>
+       
+    </div>
+    <div class="col">
+      
+        <table class="table">
+            <thead>
+              <tr>
+  
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Numero de compte</th>
+  
+              </tr>
+            </thead>
+            <tbody *ngFor="let c of Cbrequest">
+              <tr>
+  
+                <td>
+                <div class="firstRow">
+  
+                  <img id="img2" src="../../assets/img/gold.png">
+  
+                  <div style="display: block;line-height: 14px;">
+                  <span style="font-weight: 500; font-size: 16px;">Carte </span>
+                  <span>{{c.cardType}}</span>
+                </div>
+  
+  
+                </div>
+                </td>
+                <td>
+                  <div style="display: flex;
+                  flex-flow: column;
+                  font-size: 14px;">
+                  <span>{{c.dateRequest |date}}</span>
+                  </div>
+                </td>
+                <td>{{c.cheque.numcompte}}</td>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+  

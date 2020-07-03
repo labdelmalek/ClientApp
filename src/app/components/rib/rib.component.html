@@ -1,0 +1,52 @@
+<div class="container">
+<h1>Demande d'attestation de RIB</h1>
+
+<div > 
+        
+     <app-dashboard-account-table [accounts]="accounts" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+      </div>
+<div class="container">
+<div  class="info">
+    <p *ngIf="selected" >Numéro de compte: {{currentAccount.numcompte}}</p>
+    <p  *ngIf="selected" class="balance">${{currentAccount.balance}}</p>
+    <p *ngIf="!selected">Veuillez selectionner un compte du tableau : </p>
+
+</div>
+<div class="container" *ngIf="selected"  >
+  <div class="row">
+    <div class="col-sm-6 col-lg-6" style="border:1px solid black; padding:5px;" class="pdf-intro" id="MyDIv" >
+  <h4>RELEVE D'IDENTITE BANCAIRE</h4>
+  <div class="d-flex flex-column">
+
+    <div class="part1" style="border:1px solid black">
+    <p> cette partie est resérvée au destinataire du Relevé</p>
+    
+    </div>
+
+    <div class="part2">
+      <p>Ce relevé est destiné à être remis sur leur demande , à vos créanciers ou débiteurs marocains ou étrangers , appelés à faire inscrire des opérations à votre compte (virements,paiement de quittances...</p>
+    </div>
+    <div class="part3" style="border: 1px solid black">
+      <p><span style="font-weight: 500">Titulaire du compte : </span>{{titulaire}}</p>
+    </div>
+
+    <div class="part4" style="text-align: center; border-bottom :1px solid moccasin" >
+      <span style="font-weight: 500">RIB</span>
+      <p>{{currentAccount.rib}}</p>
+    </div>
+
+    <div class="part4" style="text-align: center; border-bottom :1px solid moccasin" >
+        <span style="font-weight: 500">Num International</span>
+        <p>{{currentAccount.numinternational}}</p>
+      </div>
+
+      
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<button mat-raised-button *ngIf="selected"   value="CPTURE" (click)="downloadAsPDF()">Enregistrer sous forme PDF</button>
+</div>
+</div>

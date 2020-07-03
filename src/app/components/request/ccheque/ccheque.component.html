@@ -1,0 +1,82 @@
+<div class="container d-flex flex-wrap">
+
+    <div class="white">
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col">Type</th>
+            <th scope="col">Date</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let c of myCheckbook">
+          <tr>
+
+            <td>
+            <div class="firstRow">
+
+              <img src="../../assets/img/cheque.png">
+
+              <div style="display: block;line-height: 14px;">
+              <span style="font-weight: 500; font-size: 16px;">Carnet cc </span>
+              <span>Classique</span>
+            </div>
+
+
+            </div>
+            </td>
+            <td>
+              <div style="display: flex;
+              /* width: 140px; */
+              flex-flow: column;
+              font-size: 14px;">
+              <span>{{c.dateRequest |date}}</span>
+              <span style="font-weight:500">{{c.dateRequest | date:'shortTime'}}</span>
+              </div>
+
+
+
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="checkbook">
+        <div class="alert alert-info" role="alert">
+            <strong>Nos </strong><span>Ccheques : Veuillez demander votre carnet de cheque !</span>
+          </div>
+          <div class="alert alert-success" *ngIf="isCheque" role="alert">
+            Demande envoyée
+          </div>
+        <div class="request">
+          <div class="img"><img src="../../assets/img/checkbook-512.png"></div>
+          <span id="checkbook">Carnet de chèque</span>
+          <span class="type">De type Classique</span>
+        </div>
+
+        <mat-form-field >
+          <mat-label>saisir votre numéro de compte</mat-label>
+          <mat-select [(value)]="selected" (selectionChange)="changeSelect()"  >
+            <mat-option *ngFor="let compte of myChequeAccount" value="{{compte.numinternational}}">{{compte.numinternational}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <p>le compte saisi: {{selected}}</p>
+
+        <mat-button-toggle-group *ngIf="isSelected" >
+          <mat-button-toggle *ngIf='!success' (click)="saveRequest()" >envoyer demande</mat-button-toggle>
+          <mat-button-toggle *ngIf='success'  style="background-color: forestgreen;"  >Demande enregistée</mat-button-toggle>
+        </mat-button-toggle-group>
+
+
+
+
+
+
+    </div>
+
+
+  </div>

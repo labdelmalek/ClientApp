@@ -1,0 +1,11 @@
+<app-navbar (myEvent)="done($event)" (myEvent2)="done2($event)"></app-navbar>
+
+
+   
+<app-request-preview [Ccrequest]="Ccrequest" [Cbrequest]="Cbrequest" *ngIf="!hasRoute('/ccheque') && !hasRoute('/creditCard')"></app-request-preview>
+
+
+<app-ccheque [myCheckbook]="Ccrequest" [myChequeAccount]="comptesCheques" *ngIf="hasRoute('/ccheque')"></app-ccheque>
+
+<app-carte-bancaire *ngIf="hasRoute('/creditCard')"  [myChequeAccount]="comptesCheques"></app-carte-bancaire>
+

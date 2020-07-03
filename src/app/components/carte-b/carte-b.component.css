@@ -1,0 +1,101 @@
+.carte{
+  /*
+width:85%;
+  height:auto;
+  padding-bottom: 10px;
+  height: 250px;
+  */
+
+  width:70%;
+  height:auto;
+  padding-bottom: 10px;
+  min-width: 300px;
+
+
+}
+
+
+
+.card_image {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-family: 'Inika', serif;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Inika', serif;
+}
+.top-left1 {
+  position: absolute;
+  top: 40%;
+  left: 16%;
+  font-size: 18px;
+  display: inline-flex;
+  font-family: 'Inika', serif;
+
+}
+
+.top-left1 span{
+  padding: 0 8% 0 5%;
+  font-family: 'Inika', serif;
+}
+
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 15%;
+  right: 43%;
+  font-weight: 100;
+  font-size: 12px;
+  font-family: 'Inika', serif;
+
+}
+.bottom-right1 {
+  position: absolute;
+  bottom: 10%;
+  right: 43%;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Inika', serif;
+
+}
+
+
+/* Centered text */
+.right {
+  position: absolute;
+  top: 20px;
+  right: 20%;
+  font-family: 'Inika', serif;
+ 
+}
+
+@media(min-width: 1051px)and (max-width: 1134px)     {
+
+  .top-left1 {
+    
+    left: 10%;
+    font-size: 14px;
+    
+  
+  }
+  .carte{
+    text-align: center;
+    padding:0;
+  }
+}

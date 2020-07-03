@@ -1,0 +1,130 @@
+<div class="adjust-all" *ngIf="client$  | async; let client">
+    <div class="left-side"> 
+        <div class="left-adjust better">
+            <div class="image" >
+                <!--<i class="fa fa-user" aria-hidden="true"></i>-->
+                <img src="../../../assets/img/user.png" alt="un user ">
+            </div>
+            <p class="name">Hello, {{client.lastName.toUpperCase()}} {{client.firstName.toUpperCase()}}</p>
+        </div>
+        <div class="left-adjust better d-flex flex-column"> 
+            <!--<i class="fas fa-wallet"></i>-->
+
+            <div class="image" style="text-align: center"><img src="../../../assets/img/money.png" alt="wallet"></div>
+            <p class="price">${{balance.toFixed(2)}}</p>
+            <button type="button" class="btn show_balance" (click)="openDialog()">show balance</button>
+            <p class="balance">Available Balance </p>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div class="diviser">
+            <div class="heee">
+                <div style="width : 50%">
+            <p class="title">Personal Details</p>
+                 </div>
+                 <div style="width : 50%, text-allign : right">
+            <button (click)="editAddress()">edit</button>
+                 </div>
+            </div>
+            <div class="hello">
+                <div class="better left-details">
+                    <p>Name</p>
+                    <p>Date of Birth</p>
+                    <p>Addresses</p>
+                    <p *ngIf="editAdresseInd">Nouvelle Addresse</p>
+                </div>
+                <div class="better">
+                    <p>{{client.lastName}} {{client.firstName}}</p>
+                    <p>{{client.dateNaissance |   date:'shortDate'}}</p>
+                    <p>{{client.adresse}}<br>                        
+                    </p>
+                    <div *ngIf="editAdresseInd">
+                    <input type="text" [(ngModel)]="newAdresse">
+                    <button style="margin-left : 10px" (click)="updateAdresse()">Submit</button>
+                    </div>        
+                </div>
+            </div>
+        </div>
+        <div class="diviser">
+            <div class="heee">
+                <div style="width : 50%">
+            <p class="title">Email address</p>
+                 </div>
+                 <div style="width : 50%, text-allign : right">
+            <button (click)="editEmail()">edit</button>
+                 </div>
+            </div>
+            <div class="hello">
+                <div class="better left-details">
+                    <p>Email (Primary)</p>
+                    <p *ngIf="editEmailInd">Nouveau Email</p>
+                </div>
+                <div class="better">
+                    <p>{{client.email}}</p>
+                    <div *ngIf="editEmailInd">
+                        <input type="text" [(ngModel)]="newEmail">
+                        <button style="margin-left : 10px" (click)="updateEmail()">Submit</button>
+                        </div>        
+                </div>
+            </div>
+        </div>
+        <div class="diviser">
+            <div class="heee">
+                <div style="width : 50%">
+            <p class="title">Phone</p>
+                 </div>
+                 <div style="width : 50%; text-align: right">
+                    <button (click)="editPhone()">edit</button>
+                </div>
+            </div> 
+                       <div class="hello">
+                <div class="better left-details">
+                    <p>Mobile (Primary)</p>
+                    <p *ngIf="editPhoneInd">Nouveau Numero</p>
+
+                </div>
+                <div class="better">
+                    <p>{{client.phone}}</p>
+                    <div *ngIf="editPhoneInd">
+                        <input type="text" [(ngModel)]="newPhone">
+                        <button style="margin-left : 10px" (click)="updatePhone()">Submit</button>
+                        </div>      
+                </div>
+            </div>
+        </div>
+        <div class="diviser">
+          
+            <div class="heee">
+                <div style="width : 50%">
+            <p class="title">Password</p>
+                 </div>
+                 <div style="width : 50%, text-allign : right">
+                    <button (click)="editPword()">edit</button>
+                 </div>
+            </div>            
+            <div class="hello">
+                <div class="better left-details">
+                    <p>Password</p>
+                    <p *ngIf="editPwordInd">Ancien Mot de Passe</p>
+                    <p *ngIf="editPwordInd">Nouveau MDP</p>
+                    <p *ngIf="editPwordInd">Confirmer MDP</p>
+
+                </div>
+                <div class="better">
+                    <p class="pass">*********</p>
+                    <div *ngIf="editPwordInd">
+                        <input type="text" [(ngModel)]="ancienPword">
+                        <br>
+                        <input type="text" [(ngModel)]="NouveauPword">
+                        <br>
+                        <input type="text" [(ngModel)]="ConfirmPword">
+
+                        <button style="margin-left : 10px" (click)="updatePword()">Submit</button>
+                        </div>      
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

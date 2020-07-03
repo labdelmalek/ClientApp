@@ -1,0 +1,34 @@
+
+.container{
+  padding:15px 20px 15px 20px;
+  overflow: hidden;
+}
+.info{
+    background-color:rgb(224, 221, 209);
+    display: flex;                  /* establish flex container */
+    flex-direction: row;            /* default value; can be omitted */
+    flex-wrap: nowrap;              /* default value; can be omitted */
+    justify-content: space-between; 
+    margin-bottom: 2%;
+}
+.balance{
+    color: #36d64b;
+}
+p{
+    margin: 1.5%;
+    font-size: 12pt;
+}
+.white{
+  background: white;
+}
+@media (max-width: 800px) {
+  .container{
+      padding: 0;
+      overflow: hidden;
+  }
+}
+  
+  
+ 
+  
+  

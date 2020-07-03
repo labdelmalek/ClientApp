@@ -1,0 +1,69 @@
+.Danger{
+    background-color:red;
+}
+.Ndanger{
+    background-color: rgba(250, 188, 118, 0.863);
+}
+.Good{
+    background-color: rgba(135, 220, 135, 0.83);
+}
+.dat p{
+    
+   display: flex;
+   flex-direction: column;
+}
+table tr.highlight {
+    transform: scale(1.2, 1.2);
+    transition: .3s all;
+  }
+  table tr.highlight2 {
+    transform: scale(1);
+    
+  
+  }
+  
+img{
+    width:2.5vw;
+}
+.table td, .table th {
+    vertical-align: top;
+    border:none;
+    }
+td:nth-child(0){
+    width: 50px;}
+
+
+    @media only screen and (max-width:1024px){
+    
+        table{
+            width: 100%;
+        }
+      }
+    
+      @media only screen and (max-width:700px){
+        
+        table{
+            width: 100%;   
+        }
+        p{
+            font-size: 1rem!important;
+        }
+        span{
+           font-size: 1rem!important;
+        }
+      }
+    
+    @media only screen and (min-width:360px){
+        
+        table{
+            width: 100%;
+        }
+        p{
+            font-size: 1rem!important;
+        }
+        span{
+            font-size: 1rem!important;
+        }
+        
+      }
+

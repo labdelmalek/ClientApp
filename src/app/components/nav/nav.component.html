@@ -1,0 +1,56 @@
+<mat-drawer-container class="example-container" autosize >
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+
+    <div class="side_title">
+      <span><mat-icon>group_work</mat-icon></span>
+      <span id="title">Banque</span>
+    </div>
+    <span *ngIf="isAuthenticated" id="small_title">COMPTES</span>
+    <mat-nav-list *ngIf="isAuthenticated">
+        <a mat-list-item routerLink="dashboard" >Résumé des comptes</a>
+        <a mat-list-item routerLink="accounts" >COMPTES</a>
+        <a mat-list-item routerLink="credits" >Mes Credits</a>
+
+        <a mat-list-item routerLink="rib" >Demander attestation R.I.B</a>
+      </mat-nav-list>
+      
+
+      
+      
+    <!-- <mat-nav-list *ngIf="!isAuthenticated">-->
+         
+      <span *ngIf="isAuthenticated" id="small_title">TRANSACTIONS</span>
+    <mat-nav-list *ngIf="isAuthenticated">
+        <a mat-list-item routerLink="addtransaction" >Effectuer Transactions</a>
+        <a mat-list-item routerLink="transactions" >Les transferts</a>
+      </mat-nav-list>
+
+      <span *ngIf="isAuthenticated" id="small_title">SERVICES</span>
+    <mat-nav-list *ngIf="isAuthenticated">
+        <a mat-list-item routerLink="request" >Demande CB/CC</a>
+        <!-- <a mat-list-item routerLink="logged" >Account Statements</a>
+        <a mat-list-item routerLink="." >Enroll new Account</a>
+        <a mat-list-item routerLink="." >Enroll a credit card</a>
+        <a mat-list-item routerLink="." >Card Remplacement</a> -->
+      </mat-nav-list>
+      <span id="small_title">AUTRES</span>
+      <mat-nav-list >
+        <a mat-list-item routerLink="about" >A propos de nous</a>
+        <a mat-list-item routerLink="simulationcredit" >Simulation de Crédit</a>
+
+    </mat-nav-list>
+      <span class="last_title">&copy; Bank, Tous droits réservée</span>
+  </mat-drawer>
+  <app-navbar [inputSideNav]="drawer" *ngIf="!hasRoute('/request') "></app-navbar>
+
+
+
+  <div class="route">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+</mat-drawer-container>
+

@@ -1,0 +1,39 @@
+<div class="container">
+    <nav class="navbar navbar-light second_nav">
+        <button type="submit" id="cheque" class="btn btn-secondary btn-lg" (click)="voircheques()">Comptes chèque</button>
+           <button type="submit" id="epargne" class="btn btn-secondary btn-lg"(click)="voirepargnes()">Comptes épargne</button> 
+      </nav> 
+      <app-dashboard-account-table *ngIf="Epargne" [accounts]="Epargnes" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+      <app-dashboard-account-table  *ngIf="!Epargne" [accounts]="Cheques" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+    
+      <div class="container">
+            <div  class="info">
+                <p *ngIf="selected" >Numéro de compte : {{currentAccount.numcompte}}</p>
+               <p  *ngIf="selected"class="balance">${{currentAccount.balance}}</p>
+               <p *ngIf="!selected">Veuillez selectionner un compte du tableau : </p>
+            </div>
+     </div>
+     
+     <div class="container row">
+         
+        <div class="col">
+          <app-dashrecent-activities [transaction]="transaction"></app-dashrecent-activities>
+                </div>
+    
+    
+    
+            <div class="col " *ngIf="containsCarte">
+        <app-carte-b  [carte]="carte" [owner]="owner"></app-carte-b>
+            </div>
+    
+    
+    
+            <div class="col " *ngIf="!containsCarte">
+      <div  class="  d-flex flex-column align-items-center">
+        <div class="alert alert-danger ">Aucune carte est liée à ce compte</div>
+      </div>
+    
+          </div>
+          
+      </div>
+      </div>

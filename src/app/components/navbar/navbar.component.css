@@ -1,0 +1,59 @@
+.second_nav{
+  background: #00B4DB;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height:auto;
+  padding:40px 0 40px 0;
+
+}
+button:focus {
+  outline: none;
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+.second_nav a{
+  color:white;
+  font-size:3vw;
+  margin-left:20px;
+}
+
+.first_nav{
+  max-height: 40px;
+  display: flex;
+  flex-direction: row-reverse;
+  direction: rtl;
+
+}
+
+.mat-button-toggle-group{
+  font-size: 20px;
+  display:flex;
+  flex-wrap: wrap;
+  border:none;
+  border-radius: 0;
+}
+.mat-button-toggle{
+  background: white;
+  color: #00B4DB;
+  font-weight: 400;
+  margin:10px;
+  width:220px;
+
+}
+.showen{
+  display: none;
+}
+.total_balance{
+  flex-direction: column;
+  margin-right: 20px;
+  }
+
+
+@media(max-width:700px){
+  .showen{
+    display:block;
+  }
+}
+
+
+

@@ -1,0 +1,45 @@
+<div class="container " id="cc">
+    <div class="panel panel-primary">
+        <div class="panel-heading">All Accounts</div>
+       
+        <div class="panel-body">
+            <table>
+                <thead><tr>
+                    <th class="pos" scope="col"></th>
+                    <th  class="pos"scope="col">Type</th>
+                    <th  class="pos"scope="col">Numero de compte</th>
+                    <th  class="pos"scope="col">Date de creation</th>
+                    <th  class="pos" scope="col">Statut</th>
+                    <th  class="pos"scope="col" >balance</th>
+                    <th  class="pos"scope="col">numinternational</th>
+                    <th class="pos" scope="col">Selectionne Un compte</th>
+                </tr>
+        </thead>
+        
+        <tbody>
+                 <tr class="test"*ngFor="let p of accounts |paginate:{id : 'listing_pagination',
+                itemsPerPage: 5,
+                currentPage: page,
+                totalItems: totalRecords}"> 
+                    <td  class="pos"><div><img *ngIf="def(p.taux)" src="../../../assets/image/im1.png"  /> 
+                      <img *ngIf="def(p.frais)" src="../../../assets/image/im2.png"  /></div></td>
+                    <td class="pos" *ngIf="def(p.taux)" >cheque</td>
+                    <td class="pos" *ngIf="def(p.frais)" >epargne</td>
+                    <td class="pos">{{p.numcompte}}</td>
+                    <td class="pos">{{p.creation_date| date :'shortDate'}}</td>
+                    <td  class="pos" *ngIf="p.is_suspended==false">Active</td>
+                    <td  class="pos" *ngIf="p.is_suspended==true">Desactivé</td>
+                    <td class="pos">{{p.balance}}</td>
+                    <td class="pos">{{p.numinternational}}</td>
+                    <td class="pos"><button type="radio" class="btn" style="background-color: #337ab7;" data-toggle="button" (click)="getAccNum(p.numcompte)" checked>
+                        select</button></td>
+                     </tr>
+                        </tbody>
+                        
+            </table>
+            <div>
+              <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<ngb-carousel
+[showNavigationArrows]="true" 
+[showNavigationIndicators]="true"
+interval="6000"
+[keyboard]="false"
+[pauseOnHover]="false"
+[wrap]="true"
+[activeId]="'firstSlide'"
+
+>
+  <ng-template ngbSlide id="firstSlide">
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/slider/1.jpg" alt="Angular Carousel 1">
+    </div>
+    <div class="carousel-caption">
+      <h2>SECMoney : La banque de Confiance</h2>
+      <button mat-raised-button routerLink="/login">Connecter à votre compte</button>
+      <p style="font-size:14pt; font-style: italic;">Tout le monde sait qu'on ne choisit pas sa famille, mais on peut choisir ses amies. Et dans un univers où seul compte votre pedigree et votre compte en banque, mieux vaut avoir une alliée. Nos meilleurs amis peuvent parfois nous faire péter les plombs mais il faut bien reconnaître que sans elles ont serait un peu perdu. Et ces deux là sont les meilleures amies du monde..</p>
+    </div>  
+  </ng-template>
+  <ng-template ngbSlide id="secondSlide">
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/slider/2.jpg" alt="Angular Carousel 2">
+    </div>
+    <div class="carousel-caption">
+      <h2>Effectuer vos opérations bancaire de chez vous. </h2>
+      <button mat-raised-button routerLink="/login">Connecter à votre compte</button>
+      <p style="font-size:14pt;font-weight: bold;"> Virement | Transfert d'argent | Crédit | Requêtes</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide id="thirdSlide">
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/slider/3.jpg" alt="Angular Carousel 1">
+    </div>
+    <div class="carousel-caption">
+      <h2>Satisfaire nos clients</h2>
+      <button mat-raised-button routerLink="/login">Connecter à votre compte</button>
+      <p style="font-size:14pt; font-weight: bold;">SECMoney vous accompagne dans le monde entier</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide id="fourthSlide">
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/slider/4.jpg" alt="Angular Carousel 1">
+    </div>
+    <div class="carousel-caption">
+      <h3 style="color: black;">SECMoney :  la banque de demain</h3>
+      <button mat-raised-button routerLink="/login">Connecter à votre compte</button>
+      <p style="color: black; font-size:14pt; font-weight: bold;">La première banque digitalisée dans le monde entier.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<router-outlet></router-outlet>

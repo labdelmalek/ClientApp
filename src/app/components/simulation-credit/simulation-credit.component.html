@@ -1,0 +1,80 @@
+
+
+<div class="credit-div">
+    <form >
+        <div class="div-block">
+              <div class="div-label">
+                  <label for="vol">Montant en MAD :</label>
+              </div>
+              <div class="div-input">
+                 <input #montant (input)="changeMontant(montant.value)" type="range" min="5000" max="500000" value="5000" step="5000" >
+                  
+                </div>
+        </div>
+    
+        <div class="div-block">
+             <div class="div-label">
+                   <label for="vol">Taux % :</label>
+             </div>
+             <div class="div-input">
+                    <input #taux (input)="changeTaux(taux.value)" type="range" min="5" max="13" value="5" step="0.01" >
+              </div>
+        </div>
+    
+        <div class="div-block">  
+              <div class="div-label">
+                  <label for="vol">Durée en mois:</label>
+              </div>
+              <div class="div-input">
+                  <input  #duree (input)="ChangeDuree(duree.value)" type="range" min="6" max="300" value="6" step="6" >
+              </div>
+        </div>
+    
+      </form>
+     
+      <div class="values-div">
+            <div class="labels">
+                    <div class="div-calc">
+                          <label>
+                            Montant :
+                          </label>    
+                          <div class="div-mt">
+                                  <label> {{Montant}} dhs</label>
+                          </div>
+                    </div>
+                      <br>
+                    <div class="div-calc">
+                          <label>
+                            Taux :
+                          </label>    
+                          <div class="div-mt">
+                                  <label> {{Taux}} %</label>
+                          </div>
+                    </div>
+                      <br>
+                    <div class="div-calc">
+                        <label>
+                          Duree :
+                        </label>    
+                        <div class="div-mt">
+                                <label> {{Duree}} Mois</label>
+                        </div>
+                    </div>
+            </div>
+    
+            <div class="mensualite-div">
+    
+              <label> Mensualité :</label> 
+              <div class="div-mtmen">
+    
+              <label id="mensualite">{{mensualite}} DHS</label>
+             </div>
+    
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+      <!-- (change)="valueChanged($event)" -->

@@ -1,0 +1,33 @@
+tr {
+    width: 90%;
+    display: inline-table;
+    table-layout: fixed;
+   
+    }
+    
+    table{
+     height:210px;              
+     display: -moz-groupbox;   
+    }
+    tbody{
+      overflow-y: scroll;      
+      height: 200px;            
+      width: max-size;
+     position:relative;
+    }
+#cc{
+    width: 95%;
+  }
+    img{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        
+    }
+   .pos{
+       text-align: center;
+   }
+   table{
+       border: none;
+   }
+ 

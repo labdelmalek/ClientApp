@@ -1,0 +1,35 @@
+<div class="container">
+<nav class="navbar navbar-light second_nav">
+  <button type="submit" id="cheque" class="btn btn-secondary btn-lg" (click)="voircheques()">Checking Accounts</button>
+     <button type="submit" id="epargne" class="btn btn-secondary btn-lg"(click)="voirepargnes()">Saving Accounts</button> 
+</nav> 
+<app-dashboard-account-table *ngIf="Epargne" [accounts]="Epargnes" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+<app-dashboard-account-table  *ngIf="!Epargne" [accounts]="Cheques" (ccompte)="oncompte($event)"></app-dashboard-account-table>
+<div class="container">
+      <div  class="info">
+          <p *ngIf="selected" >Numéro de compte : {{currentAccount.numcompte}}</p>
+         <p  *ngIf="selected"class="balance">${{currentAccount.balance}}</p>
+         <p *ngIf="!selected">Veuillez celectionner un compte du tableau : </p>
+      </div>
+</div>
+<div class="container">
+  <div class="row">
+    
+    <div class=" white col mr-2" *ngIf="selected">
+    
+      <h5   style=" color: darkgrey; font-weight: 300;">Transactions</h5>
+    <app-dashrecent-activities [transaction]="transactionCmp"></app-dashrecent-activities>
+       
+      </div>
+      
+
+      <div class=" white col" *ngIf="selected">
+        
+            <h5   style=" color: darkgrey; font-weight: 300;">Mouvement</h5>
+          <app-mouvement-cmpte [transaction]="transactionssCmp"></app-mouvement-cmpte>
+                </div>
+             
+              </div>
+
+</div>
+</div>

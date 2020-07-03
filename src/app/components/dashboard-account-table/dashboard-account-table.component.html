@@ -1,0 +1,55 @@
+<div class="container account" >
+    <div class="row">
+            <div class="col" >
+                    <table class="table pb-4">
+                            <thead>
+                              <tr>
+                                <th scope="col" style="width:155px;">Tous les comptes </th>
+                        
+                              </tr>
+                            </thead>
+            
+   
+    
+    <tbody>
+
+            <tr class="first_tr">
+                    <td class="first_td"></td>
+                    <td  >Type</td>
+                    <td  >Numero de compte</td>
+                    <td  >Date de creation</td>
+                    <td  >Status</td>
+                    <td  >balance</td>
+                    <td >numinternational</td>
+                </tr>
+           
+            
+            <tr class="test" (click)="select(p)" *ngFor="let p of accounts | paginate:{id : 'listing_pagination',
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: totalRecords}"
+            (click)="highlightRow(p)" 
+            [ngClass] = "{'highlight' : p.id == selectedName}"> 
+                <td  class="pos"><div><img *ngIf="def(p.taux)" src="../../../assets/image/im1.png"  /> 
+                  <img *ngIf="def(p.frais)" src="../../../assets/image/im2.png"  /></div></td>
+                <td class="pos" *ngIf="def(p.taux)" >cheque</td>
+                <td class="pos" *ngIf="def(p.frais)" >epargne</td>
+
+                <td class="pos">{{p.numcompte}}</td>
+                <td class="pos">{{p.creation_date| date :'shortDate'}}</td>
+                <td  class="pos" *ngIf="p.is_suspended==false">Active</td>
+                <td  class="pos" *ngIf="p.is_suspended==true">Desactivé</td>
+                <td class="pos">{{p.balance}}</td>
+                <td class="pos">{{p.numinternational}}</td>
+                     </tr>
+                    </tbody>
+                    
+        </table>
+        <div>
+            <br>
+          <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+</div>
+

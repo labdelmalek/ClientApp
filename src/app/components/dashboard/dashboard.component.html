@@ -1,0 +1,24 @@
+<div class="container" style=" margin-top: 0px;" *ngIf="isDataAvailable">  
+      <div > 
+        
+     <app-dashboard-account-table [accounts]="accounts"></app-dashboard-account-table>
+      </div>
+      <div class="sameRow" >
+        <div class="hello"> 
+          <div>
+            <h5   style=" color: darkgrey;padding:2px 0 4% 4%;">Activités récentes</h5>
+        </div>
+           <app-dashrecent-activities [transaction] = "transaction"></app-dashrecent-activities>
+          </div>
+        <div  class="chart">
+          
+          <app-account-activity-chart [values] = "values" [dates]="dates"></app-account-activity-chart>
+        </div>
+      </div>
+    
+    </div>
+  
+ 
+  
+  
+  

@@ -1,0 +1,72 @@
+.credit-div{
+    padding: 5%;
+}
+.div-block{
+    display: flex;
+}
+
+.div-input{
+    width: 100%;
+    height: 50px;
+}
+.div-input input{
+    width: 100%;
+}
+.div-label{
+    width: 30%;
+}
+.div-calc{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.div-calc label{
+   width: 150px;
+}
+
+.div-mt{
+    background-color: rgb(34,191,240);
+    width: 100px;
+    height: 50px;
+    color : white;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+.values-div{
+    display: flex;
+}
+.mensualite-div{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    text-align: center;
+    width: 100%;
+
+
+}
+.labels{
+    width: 40%;
+}
+.mensualite-div label{
+    width: 35%;
+}
+#mensualite{
+    width: 100%;
+}
+
+.div-mtmen{
+    
+        background-color: #eb4034;
+        border-radius: 20px;
+        font-size: 20pt;
+        width: 50%;
+        height: 80%;
+        color : white;
+        align-items: center;
+        display: flex;
+        text-align: center;
+    
+}

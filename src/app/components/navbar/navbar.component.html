@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+                <button type="button" class="btn" (click)="toggle()" >
+                    <mat-icon>calendar_view_day</mat-icon>
+                </button>
+        </li>
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="login">Se connecter</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link"  (click)="logout()">Se déconnecter</a>
+      </li>
+
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="profile">Profile</a>
+      </li>
+
+
+      
+  
+    <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="dashboard" >Résume des comptes</a>
+        </li>
+        <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="accounts" >Comptes</a>
+        </li>
+        <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="rib" >Demander attestation R.I.B</a>
+      </li>
+
+      <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="addtransaction" >Inquire Transactions</a>
+        </li>
+        <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="transactions" >Les transferts</a>
+        </li>
+        <li class="nav-item showen" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="request" >Demande CB/CC</a>
+        </li>
+        <li class="nav-item showen" >
+        <a class="nav-link" routerLink="." >A propos de nous</a>
+        </li>
+        <li class="nav-item showen" >
+        <a class="nav-link" routerLink="simulationcredit" >Simulation de Crédit</a>
+        </li>
+
+    
+
+    </ul>
+  </div>
+</nav>
+
+
+
+<nav class="navbar navbar-light second_nav">
+  <a class="navbar-brand" *ngIf="!isAuthenticated">Welcome to Bank</a>
+  <a class="navbar-brand" *ngIf="isAuthenticated">Welcome Back {{clientname}}  </a>
+  <a class="navbar-brand" *ngIf="isAuthenticated && hasRoute('/dashboard') ">
+    <mat-button-toggle-group>
+      <div class="d-flex total_balance">
+        <span style="font-size: 12px;">Total balance</span>
+        <span style="font-weight:400;font-size:30px;">${{balance}}</span>
+      </div>
+
+        <mat-button-toggle class="mat-button-toggle1" routerLink="addtransaction">Make a transfert</mat-button-toggle>
+      </mat-button-toggle-group>
+
+    </a>
+  <a class="navbar-brand" *ngIf=" isAuthenticated && hasRoute('/request') ">
+    <mat-button-toggle-group>
+        <mat-button-toggle routerLink="/request/creditCard" (click)="clickCb()">Demander CB</mat-button-toggle>
+        <mat-button-toggle  routerLink="/request/ccheque" (click)="clickCheck()">Demander Checkbook</mat-button-toggle>
+      </mat-button-toggle-group>
+      </a>
+       
+
+
+</nav>
+
+

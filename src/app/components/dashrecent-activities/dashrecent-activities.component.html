@@ -1,0 +1,30 @@
+
+
+<table class="table table-hover">
+    <tbody>
+        <tr *ngFor="let c of transaction |  sortBy:'desc':'date' | paginate:{id : 'paginate2',
+        itemsPerPage: 2,
+        currentPage: page,
+        totalItems: totalRecords}"
+        (mouseover)="highlightRow(c)" (mouseout)="hideScale()"
+      [ngClass] = "{'highlight' : c.id_transaction == selectedName,'highlight2' : c.id_transaction != selectedName }"
+      >
+        <td><img src="../../../assets/img/argent.png"></td>
+            <td class="mt-0 mb-1 d-flex flex-column align-items-center" > 
+                <p style="font-size:10px;margin:0; color: #6A6A6A;" >{{c.date | date:'MMM'}} </p>
+                <p style="font-weight:bold; font-size:22px;color: #6A6A6A;">{{c.date | date:'dd'}}</p>                        
+            </td>   
+            <td > 
+                <span *ngIf="c.is_sender==false"  style="font-size:20px;color: #6A6A6A !important; font-weight: lighter;" >{{c.sender.numcompte}}</span>
+                 <span *ngIf="c.is_sender==true"  style="font-size:20px;color: #6A6A6A !important; font-weight: lighter;"  > {{c.receiver.numcompte}}</span>
+            </td> 
+            <td > 
+                <span *ngIf="c.is_sender==false" class="badge Good" style="font-size:20px;color: #6A6A6A !important; font-weight: bold;" >+{{c.somme.toFixed(2)}}<span style="font-size:small ;">MAD</span> </span>
+                <span *ngIf="c.is_sender==true" class="badge Ndanger" style="font-size:20px;color: #6A6A6A !important; font-weight: bold;"  >  -{{c.somme.toFixed(2)}} <span style="font-size:small ;">MAD</span></span>    
+            </td> 
+        </tr>
+    </tbody>
+</table>
+<div>
+              <pagination-controls id="paginate2" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+            </div>
